@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #181818;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  font-size: 20px;
+  font-family: "Noto Serif KR", serif;
+  background-image: url(../img/sign-up.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#wrap {
+  width: 100vw;
+  height: 100%;
+}
+
+#rap {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+#rap #box1 {
+  max-width: 50%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#rap h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #3e5b75;
+}
+
+#rap h1 i {
+  font-size: 4rem;
+}
+
+#rap p {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#rap form input {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  border: 1px solid #3e5b75;
+  border-radius: 10px;
+}
+
+#rap form label {
+  font-size: 1rem;
+}
+
+#rap form #man,
+#rap form #girl {
+  width: 10%;
+  height: 15px;
+}
+
+#rap form select {
+  width: 24%;
+  height: 30px;
+}
+
+#rap form #txtMobile2 {
+  width: 35%;
+}
+
+#rap form #txtMobile3 {
+  width: 35%;
+}
+
+#rap button {
+  display: inline-block;
+  width: 40%;
+  height: 40px;
+  background-color: #3e5b75;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  margin: 0 4%;
+}
+
+#img-box {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  float: right;
+}
+
+#img-box #img-box {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  max-width: 50%;
+  height: 60%;
+}
+
+#img-box #img-box .img {
+  width: 100%;
+  height: 80%;
+  background-size: contain;
+  background-position: center left;
+}
+
+#img-box #img-box p {
+  text-align: end;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: 16px;
+  }
+  #img-box {
+    width: 50%;
+  }
+  #img-box #img-box {
+    max-width: 100%;
+    height: auto;
+  }
+  #img-box #img-box .img {
+    display: none;
+  }
+  #img-box #img-box p {
+    text-align: end;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #rap {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+  #rap #box1 {
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #img-box {
+    display: none;
+    width: 50%;
+  }
+  #img-box #img-box {
+    max-width: 100%;
+    height: auto;
+  }
+  #img-box #img-box .img {
+    display: none;
+  }
+  #img-box #img-box p {
+    text-align: end;
+    font-size: 1rem;
+  }
+  #rap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: calc(100% - 40px);
+    height: 100%;
+    margin-left: 20px;
+  }
+  #rap #box1 {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+  }
+  #rap h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #3e5b75;
+  }
+  #rap h1 i {
+    font-size: 4rem;
+  }
+  #rap p {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  #rap form input {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 1px solid #3e5b75;
+    border-radius: 10px;
+  }
+  #rap form label {
+    font-size: 1rem;
+  }
+  #rap form #man,
+  #rap form #girl {
+    width: 10%;
+    height: 15px;
+  }
+  #rap form select {
+    width: 24%;
+    height: 30px;
+  }
+  #rap form #txtMobile2 {
+    width: 35%;
+  }
+  #rap form #txtMobile3 {
+    width: 35%;
+  }
+  #rap button {
+    display: inline-block;
+    width: 40%;
+    height: 40px;
+    background-color: #3e5b75;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    margin: 0 4%;
+  }
+}

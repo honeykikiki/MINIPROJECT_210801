@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #181818;
+}
+html,
+body {
+  // width: 100vw;
+  height: 100vh;
+  font-size: 20px;
+  font-family: "Noto Serif KR", serif;
+  background-image: url(../img/main-page.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  // overflow: hidden;
+}
+
+@mixin center($top: 50%, $left: 50%, $transX: -50%, $transY: -50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($transX, $transY);
+}
+
+@mixin clear() {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+$margint20: 20px;
+$magin10: 10px;
+$mainColor: #3e5b75;
+
+header {
+  width: calc(100% - 40px);
+  height: auto;
+  margin-left: 20px;
+  margin-top: 20px;
+  // position: relative;
+  // top: 20px;
+  // left: 50%;
+  // transform: translateX(-50%);
+  padding: 15px 40px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: white;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  #logo {
+    color: $mainColor;
+    font-size: 2rem;
+  }
+
+  #gnb {
+    display: flex;
+
+    li {
+      padding: 8px 12px;
+      margin-left: 10px;
+      position: relative;
+      cursor: pointer;
+      &::after {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        content: "";
+        width: 0%;
+        height: 5px;
+        background-color: $mainColor;
+        transition: all 0.5s;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  #user-img {
+    padding: 0;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $mainColor;
+    border-radius: 50%;
+    cursor: pointer;
+
+    p {
+      color: #fff;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    }
+  }
+
+  #user-box {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 140%;
+    margin-right: -40px;
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    display: none;
+    // display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .user-icon {
+      background-color: $mainColor;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      border-radius: 50%;
+      p {
+        color: #fff;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      }
+    }
+    ul {
+      li {
+        margin-top: 5px;
+      }
+      .loge-out {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  header {
+    width: calc(100vw - 20px);
+    margin-left: 10px;
+    padding: 10px 10px;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    #logo {
+      color: $mainColor;
+      font-size: 2rem;
+    }
+
+    #gnb {
+      display: flex;
+      li {
+        padding: 0px 0px;
+        margin-left: 10px;
+        font-size: 0.8rem;
+      }
+    }
+
+    #user-img {
+      // width: 50%;
+      padding: 0;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $mainColor;
+      border-radius: 50%;
+      cursor: pointer;
+
+      p {
+        color: #fff;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      }
+    }
+
+    #user-box {
+      margin-right: -10px;
+    }
+  }
+}

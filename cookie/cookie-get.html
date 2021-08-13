@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쿠키 확인</title>
+  </head>
+  <body>
+    <script>
+      console.log(document.cookie);
+
+      function getCookie(name) {
+        let cookies = document.cookie.split(";");
+        console.log(cookies);
+        for (let i in cookies) {
+          if (cookies[i].indexOf(name)) {
+            console.log("방문해주셔서 갑사합니다");
+          }
+        }
+      }
+      getCookie("ABCcorp");
+    </script>
+  </body>
+</html>

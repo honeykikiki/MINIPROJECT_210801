@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #181818;
+}
+
+html,
+body {
+  height: 100vh;
+  font-size: 20px;
+  font-family: "Noto Serif KR", serif;
+  background-image: url(../img/main-page.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  width: calc(100% - 40px);
+  height: auto;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 15px 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  background-color: white;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+nav #logo {
+  color: #3e5b75;
+  font-size: 2rem;
+}
+
+nav #gnb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav #gnb li {
+  padding: 8px 12px;
+  margin-left: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+nav #gnb li::after {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  content: "";
+  width: 0%;
+  height: 5px;
+  background-color: #3e5b75;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+nav #gnb li:hover::after {
+  width: 100%;
+}
+
+nav #user-img {
+  padding: 0;
+  width: 70px;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #3e5b75;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+nav #user-img p {
+  color: #fff;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+nav #user-box {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 140%;
+  margin-right: -40px;
+  background-color: white;
+  padding: 40px 20px;
+  border-radius: 10px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+nav #user-box .user-icon {
+  background-color: #3e5b75;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+}
+
+nav #user-box .user-icon p {
+  color: #fff;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+nav #user-box ul li {
+  margin-top: 5px;
+}
+
+nav #user-box ul .loge-out {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  header {
+    width: calc(100vw - 20px);
+    margin-left: 10px;
+    padding: 10px 10px;
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+  }
+  nav #logo {
+    color: #3e5b75;
+    font-size: 2rem;
+  }
+  nav #gnb {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  nav #gnb li {
+    padding: 0px 0px;
+    margin-left: 10px;
+    font-size: 0.8rem;
+  }
+  nav #user-img {
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #3e5b75;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  nav #user-img p {
+    color: #fff;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+  nav #user-box {
+    margin-right: -10px;
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쿠키삭제</title>
+  </head>
+  <body>
+    <button id="delcookie" style="width: 200px; height: 200px; font-size: 20px">
+      쿠키삭제
+    </button>
+
+    <script>
+      // document.cookie = "Name = 값; Value =값; Expires =값;";
+      // 날짜 추출 date.getDate(현재시간)
+      // 날짜 지정 date.setDate(새로운 날짜)
+      let date = new Date();
+
+      //쿠키지우기 - 만기시간은 과거로
+
+      function delCookie() {
+        date.setDate(date.getDate() - 1);
+
+        let setCookie = "";
+        // setCookie = setCookie + 'cookieName = ABC; Val'
+        setCookie += "cookieName = ABC;";
+        setCookie += "Expires = " + date.toUTCString();
+
+        document.cookie = setCookie; // 쿠키를 성정, 생성
+      }
+
+      document
+        .querySelector("#delcookie")
+        .addEventListener("click", (event) => {
+          delCookie();
+          alert("쿠키삭제");
+        });
+    </script>
+  </body>
+</html>

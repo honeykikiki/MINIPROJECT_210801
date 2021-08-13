@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #181818;
+}
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  font-size: 20px;
+  // background-color: #3e5b34;
+  font-family: "Noto Serif KR", serif;
+  background-image: url(../img/sign-up.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin center($top: 50%, $left: 50%, $transX: -50%, $transY: -50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($transX, $transY);
+}
+
+@mixin clear() {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+$margint20: 20px;
+$magin10: 10px;
+$mainColor: #3e5b75;
+
+#wrap {
+  width: 100vw;
+  height: 100%;
+}
+
+#rap {
+  position: relative;
+  // @include center(50%, 50%, -50%, -50%);
+  width: 50%;
+  height: 100%;
+  float: left;
+  #box1 {
+    max-width: 50%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #3e5b75;
+    i {
+      font-size: 4rem;
+    }
+  }
+  p {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  form {
+    input {
+      width: 100%;
+      height: 30px;
+      margin-bottom: 10px;
+      text-align: center;
+      border: 1px solid $mainColor;
+      border-radius: 10px;
+    }
+    label {
+      font-size: 1rem;
+    }
+    #man,
+    #girl {
+      width: 10%;
+      height: 15px;
+    }
+
+    select {
+      width: 24%;
+      height: 30px;
+    }
+    #txtMobile2 {
+      width: 35%;
+    }
+    #txtMobile3 {
+      width: 35%;
+    }
+  }
+
+  button {
+    display: inline-block;
+    width: 40%;
+    height: 40px;
+    background-color: $mainColor;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    margin: 0 4%;
+  }
+}
+
+#img-box {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  // background-color: #3e5b75;
+  float: right;
+  #img-box {
+    @include center(50%, 10%, 0%, -50%);
+    max-width: 50%;
+    height: 60%;
+    .img {
+      width: 100%;
+      height: 80%;
+      background-size: contain;
+      background-position: center left;
+    }
+    p {
+      text-align: end;
+      font-size: 1rem;
+    }
+  }
+}
+
+// media ------------------------------------------------------------
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: 16px;
+  }
+
+  #img-box {
+    width: 50%;
+    #img-box {
+      max-width: 100%;
+      height: auto;
+      .img {
+        display: none;
+      }
+      p {
+        text-align: end;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  #rap {
+    position: relative;
+    // @include center(50%, 50%, -50%, -50%);
+    width: 50%;
+    height: 100%;
+    float: left;
+    #box1 {
+      max-width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #img-box {
+    display: none;
+    width: 50%;
+    #img-box {
+      max-width: 100%;
+      height: auto;
+      .img {
+        display: none;
+      }
+      p {
+        text-align: end;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  #rap {
+    @include center(50%, 50%, -50%, -50%);
+    width: calc(100% - 40px);
+    height: 100%;
+    margin-left: 20px;
+    #box1 {
+      max-width: 100%;
+      height: auto;
+      position: absolute;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #3e5b75;
+      i {
+        font-size: 4rem;
+      }
+    }
+    p {
+      font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    form {
+      input {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 10px;
+        text-align: center;
+        border: 1px solid $mainColor;
+        border-radius: 10px;
+      }
+      label {
+        font-size: 1rem;
+      }
+      #man,
+      #girl {
+        width: 10%;
+        height: 15px;
+      }
+
+      select {
+        width: 24%;
+        height: 30px;
+      }
+      #txtMobile2 {
+        width: 35%;
+      }
+      #txtMobile3 {
+        width: 35%;
+      }
+    }
+
+    button {
+      display: inline-block;
+      width: 40%;
+      height: 40px;
+      background-color: $mainColor;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      margin: 0 4%;
+    }
+  }
+}

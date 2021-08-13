@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 삭제</title>
+  </head>
+  <body>
+    <button id="delcookie">삭제</button>
+    <script>
+      function delCookie(name) {
+        let date = new Date();
+        date.setDate(date.getDate() - 1);
+
+        let setCookie = "";
+
+        setCookie += name + "=Main;";
+        setCookie += "Expires = " + date.toUTCString();
+
+        document.cookie = setCookie; // 쿠키를 성정, 생성
+
+        // document.cookie.split(";");
+      }
+      document.querySelector("#delcookie").addEventListener("click", () => {
+        delCookie("ABCcorp");
+        delCookie("cookieName");
+      });
+    </script>
+  </body>
+</html>

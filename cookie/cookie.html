@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쿠키생성</title>
+  </head>
+  <body>
+    <button id="delcookie" style="width: 200px; height: 200px; font-size: 20px">
+      쿠키삭제
+    </button>
+
+    <script>
+      // document.cookie = "Name = 값; Value =값; Expires =값;";
+      // 날짜 추출 date.getDate(현재시간)
+      // 날짜 지정 date.setDate(새로운 날짜)
+      let date = new Date();
+      date.setDate(date.getDate() + 7);
+
+      let setCookie = "";
+      // setCookie = setCookie + 'cookieName = ABC; Val'
+      setCookie += "cookieName = ABC;";
+      setCookie += "Expires = " + date.toUTCString();
+
+      document.cookie = setCookie; // 쿠키를 성정, 생성
+      console.log(document.cookie); // 쿠키확인
+
+      //쿠키지우기 - 만기시간은 과거로
+    </script>
+  </body>
+</html>

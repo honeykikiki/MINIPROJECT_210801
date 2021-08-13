@@ -1,0 +1,118 @@
+article {
+  width: calc(100% - 40px);
+  height: 785px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+article #list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+article #list ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+article #list ul li:nth-child(1) {
+  background-color: #859dae;
+}
+
+article #list ul li:nth-child(2) {
+  background-color: white;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+article #tab1 {
+  background-color: #859dae;
+  padding: 10px;
+  display: none;
+  overflow: hidden;
+}
+
+article #tab1 li {
+  background-color: white;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1.05rem;
+}
+
+article #tab1 li span {
+  display: inline-block;
+}
+
+article #tab1 li span:nth-child(1) {
+  margin-left: 20px;
+  width: 10%;
+}
+
+article #tab1 li span:nth-child(2) {
+  width: 25%;
+}
+
+article #tab1 li span:nth-child(3) {
+  width: 30%;
+}
+
+article #tab2 {
+  display: block;
+  background-color: #859dae;
+  padding: 10px;
+}
+
+article #tab2 ul {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+article #tab2 li {
+  width: 30%;
+  padding: 20px;
+}
+
+article #tab2 li div {
+  width: 100%;
+  height: 200px;
+  background-color: bisque;
+  border-radius: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+article #tab2 li div div {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #981b98;
+}
+
+article #tab2 li div p {
+  margin-left: 45%;
+}
+
+article #tab2 .more {
+  text-align: center;
+  cursor: pointer;
+}
