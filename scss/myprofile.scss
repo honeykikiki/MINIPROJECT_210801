@@ -1,0 +1,23 @@
+section {
+  width: calc(100% - 40px);
+  margin-top: 20px;
+  margin-left: 20px;
+  // overflow: hidden;
+  background-color: #e7e7de;
+  article {
+    display: flex;
+    justify-content: space-around;
+    div {
+      width: 30%;
+      margin: 20px 0;
+      padding: 20px;
+    }
+    .box1-user-icon {
+      width: 20%;
+      height: 20%;
+    }
+    li {
+      padding: 10px 10px;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 
 * {
   margin: 0;
@@ -22,7 +22,7 @@ body {
   background-image: url(../img/login-page1.png);
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: "Noto Serif KR", serif;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 @mixin center($top: 50%, $left: 50%, $transX: -50%, $transY: -50%) {
@@ -55,7 +55,7 @@ $mainColor: #3e5b75;
       line-height: 200px;
       @include center(50%, 50%, -50%, -3rem);
       font-size: 10rem;
-      color: #3e5b75;
+      color: #008891;
     }
   }
 
@@ -69,6 +69,7 @@ $mainColor: #3e5b75;
       height: 100%;
     }
     h2 {
+      width: 100%;
       font-size: 2rem;
       font-weight: normal;
       margin-bottom: $margint20;

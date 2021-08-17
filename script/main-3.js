@@ -21,31 +21,25 @@ let nowDay = `${fullYear}년 ${month + 1}월 ${day}일 ${hours}시${minutes}분$
 
 console.log(localStorage.getItem("test"));
 
-// window.onscroll = function () {
-//   console.log(window.innerHeight, window.scrollY, document.body.offsetHeight);
-//   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-//     setTimeout(function () {
-//       // $article.style.height = `(786 /(${document.body.offsetHeight} / ${window.innerHeight}))px`;
-//       $article.style.height = `1200px`;
-//     }, 0);
-//   }
-// };
-
 $loginInfo.addEventListener("click", () => {
   // 로그인 정보  클릭
-  $loginInfo.style.backgroundColor = "#859dae";
+  $loginInfo.style.backgroundColor = "#00587A";
   $memberInfo.style.backgroundColor = "white";
   $tabOne.style.display = "block";
   $tabTwo.style.display = "none";
+  $loginInfo.style.color = "white";
+  $memberInfo.style.color = "black";
 });
 console.log(document.body.scrollHeight);
 
 $memberInfo.addEventListener("click", () => {
   // 회원 목록 클릭
-  $memberInfo.style.backgroundColor = "#859dae";
+  $memberInfo.style.backgroundColor = "#00587A";
   $loginInfo.style.backgroundColor = "white";
   $tabOne.style.display = "none";
   $tabTwo.style.display = "block";
+  $loginInfo.style.color = "black";
+  $memberInfo.style.color = "white";
 });
 
 function getAjaxContents(names, emali) {
@@ -108,16 +102,9 @@ function findListTabOne(v, i) {
   $tabOneList.append(li);
 }
 
-function findListTabTwo(v, i) {
-  // 회원 목록 생성함수
-  v.text = JSON.parse(JSON.stringify(data[i].message.text));
-  v.name =
-    JSON.parse(JSON.stringify(data[i].message.from.last_name)) +
-    JSON.parse(JSON.stringify(data[i].message.from.first_name));
-  v.number = i;
-
-  id = JSON.parse(JSON.stringify(data[i].message.from.id));
-
+function findListTabTwo(i) {
+  console.log(sameValue);
+  console.log(i);
   let li = document.createElement("li");
   let div = document.createElement("div");
   let divLogo = document.createElement("div");
@@ -125,13 +112,64 @@ function findListTabTwo(v, i) {
   let pTwo = document.createElement("p");
   let pThrid = document.createElement("p");
   // pOne.append(`번호 : ${v.number + 1}`);
-  pTwo.append(`이름 : ${v.name}`);
-  pThrid.append(`아이디 : ${id}`);
+  pTwo.append(`이름 : ${sameValue[0 + 2 * i]}`);
+  pThrid.append(`아이디 : ${sameValue[1 + 2 * i]}`);
+  divLogo.style.background = `url(img/profile/${Math.ceil(Math.random() * 5)}.png) no-repeat center center`;
+  divLogo.style.backgroundSize = `cover`;
   div.append(divLogo, pTwo, pThrid);
   li.append(div);
 
   $tabTwoList.append(li);
 }
+
+const array = Array(data.length)
+  .fill({ text: "", name: "", number: "" })
+  .map((v, i, a) => {
+    findListTabOne(v, i);
+  });
+
+// 회원 목록
+for (let i = 0; i < sameValue.length / 2; i++) {
+  findListTabTwo(i);
+}
+
+$more.addEventListener("click", () => {
+  for (let j = 0; j < sameValue.length / 2; j++) {
+    findListTabTwo(j);
+  }
+});
+
+// let arr = [];
+// let sameId = [];
+
+// arr.map((v, i) => {
+//   v.id = JSON.parse(JSON.stringify(data[i].message.from.id));
+//   if (JSON.parse(JSON.stringify(data[i - 1]?.message.from.id) != v.id)) {
+//     sameId.push(v);
+//     findListTabTwo(v, i);
+//     // sameId.map((v, i) => {
+//     //   if (JSON.parse(JSON.stringify(data[i - 1]?.message.from.id) != v.id)) {
+//     //   }
+//     // });
+//   }
+//   // findListTabTwo(v, i);
+// });
+
+// time.split(",");
+
+// let customId = [];
+// let customName = [];
+
+// for (let i = 0; i < sameId.length; i++) {
+//   customId.push(sameId[i].id);
+//   customName.push(sameId[i].name);
+// }
+
+// console.log(customId, customName);
+
+// sameId.map((v, i) => {
+//   findListTabTwo(v, i);
+// });
 
 // data.map((v, i) => {
 //   v.id = JSON.parse(JSON.stringify(data[i].message.from.id));
@@ -156,76 +194,4 @@ function findListTabTwo(v, i) {
 //     }
 //   });
 //   findListTabTwo(v, i);
-// });
-
-const array = Array(data.length)
-  .fill({ text: "", name: "", number: "" })
-  .map((v, i, a) => {
-    // arr.push(JSON.parse(JSON.stringify(data[i].message.from.id)));
-    // for (let i = 0; i < data.length; i++) {
-    //   if (i == 0) {
-    //     arr[i] = JSON.parse(JSON.stringify(data[i].message.from.id));
-    //   }
-
-    //   if (arr[i - 1] !== JSON.parse(JSON.stringify(data[i].message.from.id))) {
-    //     arr[i] = JSON.parse(JSON.stringify(data[i].message.from.id));
-    //   }
-    // }
-    findListTabOne(v, i);
-  });
-
-let arr = [];
-let sameId = [];
-
-arr.map((v, i) => {
-  v.id = JSON.parse(JSON.stringify(data[i].message.from.id));
-  if (JSON.parse(JSON.stringify(data[i - 1]?.message.from.id) != v.id)) {
-    sameId.push(v);
-    findListTabTwo(v, i);
-    // sameId.map((v, i) => {
-    //   if (JSON.parse(JSON.stringify(data[i - 1]?.message.from.id) != v.id)) {
-    //   }
-    // });
-  }
-  // findListTabTwo(v, i);
-});
-
-// time.split(",");
-
-console.log(sameId);
-
-// let customId = [];
-// let customName = [];
-
-// for (let i = 0; i < sameId.length; i++) {
-//   customId.push(sameId[i].id);
-//   customName.push(sameId[i].name);
-// }
-
-// console.log(customId, customName);
-
-// sameId.map((v, i) => {
-//   findListTabTwo(v, i);
-// });
-
-// function setAjaxContents(names) {
-//   return {
-//     async: false,
-//     crossDomain: true,
-//     url: "https://api.telegram.org/bot1918408282:AAFFtZL0IopsHoflal00SmVRZ2yVFz-D09E/getUpdates",
-//     method: "post",
-//     headers: {
-//       "content-type": "application/json",
-//       "cache-control": "no-cache",
-//     },
-//     data: JSON.stringify({
-//       chat_id: 722162061,
-//       text: nowDay + names,
-//     }),
-//     success: function (res) {},
-//   };
-// }
-
-// $.ajax(setAjaxContents()).done(function (res) {
-//   console.log(res);
 // });

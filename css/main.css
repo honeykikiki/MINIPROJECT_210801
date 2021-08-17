@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +18,7 @@ html,
 body {
   height: 100vh;
   font-size: 20px;
-  font-family: "Noto Serif KR", serif;
+  font-family: "Nanum Gothic", sans-serif;
   background-image: url(../img/main-page.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -50,8 +50,9 @@ nav {
 }
 
 nav #logo {
-  color: #3e5b75;
+  color: #008891;
   font-size: 2rem;
+  cursor: pointer;
 }
 
 nav #gnb {
@@ -125,6 +126,8 @@ nav #user-box {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  -webkit-box-shadow: -5px 5px 5px gray;
+          box-shadow: -5px 5px 5px gray;
 }
 
 nav #user-box .user-icon {
@@ -133,6 +136,7 @@ nav #user-box .user-icon {
   height: 80px;
   line-height: 80px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 nav #user-box .user-icon p {

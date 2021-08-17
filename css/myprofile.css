@@ -1,0 +1,29 @@
+section {
+  width: calc(100% - 40px);
+  margin-top: 20px;
+  margin-left: 20px;
+  background-color: #e7e7de;
+}
+
+section article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+section article div {
+  width: 30%;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+section article .box1-user-icon {
+  width: 20%;
+  height: 20%;
+}
+
+section article li {
+  padding: 10px 10px;
+}

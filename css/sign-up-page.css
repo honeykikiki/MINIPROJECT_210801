@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@ body {
   width: 100vw;
   height: 100vh;
   font-size: 20px;
-  font-family: "Noto Serif KR", serif;
+  font-family: "Nanum Gothic", sans-serif;
   background-image: url(../img/sign-up.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -51,7 +51,7 @@ body {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
-  color: #3e5b75;
+  color: #008891;
 }
 
 #rap h1 i {
